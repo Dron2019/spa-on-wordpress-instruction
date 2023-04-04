@@ -1,8 +1,3 @@
-[![Node CI](https://github.com/Alatr/build/workflows/Node%20CI/badge.svg)](https://github.com/Alatr/build/actions?query=workflow%3A%22Node+CI%22)
-# build
-# rihert
-# central-park
-
 # Необходимые меры при написании JS-a для SPA
 1. Скрипты, которые выполняются для хедера, футера, меню, формы обратной связи в попапе должны быть в отдельном файле
 2. Скрипты для страницы выводить в другой файл [pageName].js
@@ -70,3 +65,27 @@
 		openPopup();
 	})
 ```
+
+
+### Подключение barba js
+- Подключить скрипт на сайт [Link](https://barba.js.org/docs/getstarted/install/ "Link")
+- Подключить gsap на сайт (если его нету) [Link](https://greensock.com/docs/v3/Installation "Link")
+- Добавить шторку (example):
+	```
+	<div class="reloader">
+	  <div class="loader"></div>
+	</div>
+	```
+- Добавить в footer.php код из [Link](https://github.com/Dron2019/spa-on-wordpress-instruction/blob/main/footer-part.php "Link")
+
+
+### Details
+- В функцию **changeBlocksOnPageReload** вторым параметром можно указывать селекторы вне barba контейнера, которые нужно поменять при смене странице(пример)
+	```
+	changeBlocksOnPageReload(next, '.footer, .header')
+	```
+
+- В фукцию **changeTextContentOnPageReload** вторым параметром можно указывать селекторы вне barba контейнера, в которых нужно поменять textContent при смене странице
+	```
+	changeTextContentOnPageReload(next, '.footer,-title')
+	```
